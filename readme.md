@@ -1,16 +1,6 @@
 # 🌍 Procedural Terrain Generation 🏞️
 
-Welcome to our exciting procedural terrain generation project! This project brings the beauty of nature to your screen using advanced algorithms and Three.js.
-
-## Table of Contents 📚
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+Welcome to my exciting procedural terrain generation project! This project brings the beauty of nature, space, and spaceX to your screen using custom shaders using GLSL and Three.js.
 
 ## Introduction 🌟
 
