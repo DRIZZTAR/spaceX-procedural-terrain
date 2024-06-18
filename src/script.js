@@ -195,7 +195,7 @@ scene.add(plane);
 const fontLoader = new FontLoader();
 fontLoader.load('/fonts/spacex.json', (font) => {
 	// First line of text
-	const textGeometry1 = new TextGeometry('Space X', {
+	const textGeometry = new TextGeometry('Space X', {
 		font: font,
 		size: 0.5,
 		height: 0.2,
@@ -206,10 +206,10 @@ fontLoader.load('/fonts/spacex.json', (font) => {
 		bevelOffset: 0,
 		bevelSegments: 5,
 	});
-	textGeometry1.center();
+	textGeometry.center();
 
 	const textMaterial1 = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
-	const textMesh1 = new THREE.Mesh(textGeometry1, textMaterial1);
+	const textMesh1 = new THREE.Mesh(textGeometry, textMaterial1);
 	textMesh1.position.set(0, 1.5, 0);
 	textMesh1.rotation.x = -Math.PI * 0.5;
 	scene.add(textMesh1);
@@ -234,11 +234,6 @@ fontLoader.load('/fonts/spacex.json', (font) => {
 	textMesh2.rotation.x = -Math.PI * 0.5;
 	scene.add(textMesh2);
 
-	// Make camera look at the text
-	const textPosition = new THREE.Vector3();
-	textGeometry1.computeBoundingBox();
-	textGeometry1.boundingBox.getCenter(textPosition);
-	camera.lookAt(textPosition);
 });
 
 /**
