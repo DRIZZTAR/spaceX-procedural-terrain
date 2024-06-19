@@ -46,16 +46,16 @@ matcapTexture.colorSpace = THREE.SRGBColorSpace
 /**
  * Environment map
  */
-const environmentMap = textureLoader.load('/space1.png');
+// const environmentMap = textureLoader.load('/space1.png');
 
-// Set the mapping type
-environmentMap.mapping = THREE.EquirectangularReflectionMapping;
+// // Set the mapping type
+// environmentMap.mapping = THREE.EquirectangularReflectionMapping;
 
-// Assign the environment map to the scene
-scene.background = environmentMap;
-scene.environment = environmentMap;
+// // Assign the environment map to the scene
+// scene.background = environmentMap;
+// scene.environment = environmentMap;
 
-gui.add(scene, 'backgroundBlurriness').min(0).max(1).step(0.01).name('Background Blurriness');
+// gui.add(scene, 'backgroundBlurriness').min(0).max(1).step(0.01).name('Background Blurriness');
 
 /**
  * Terrain
@@ -168,7 +168,7 @@ boardHole.material = new THREE.MeshNormalMaterial();
 const evaluator = new Evaluator();
 const board = evaluator.evaluate(boardFill, boardHole, SUBTRACTION);
 board.geometry.clearGroups();
-board.material = new THREE.MeshPhysicalMaterial({ color: '#ffffff', metalness: 1.0, roughness: 0.2 });
+board.material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
 board.castShadow = true;
 board.receiveShadow = true;
 scene.add(board);
