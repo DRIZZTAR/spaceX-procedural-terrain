@@ -82,10 +82,10 @@ const uniforms = {
 	uColorRock: new THREE.Uniform(new THREE.Color(debugObject.colorRock)),
 };
 
-gui.add(uniforms.uPositionFrequency, 'value').name('Position Frequency').min(0.0).max(1.0).step(0.01);
-gui.add(uniforms.uStrength, 'value').name('Strength').min(0.0).max(5.0).step(0.01);
-gui.add(uniforms.uWarpFrequency, 'value').name('Warp Frequency').min(0.0).max(10.0).step(0.01);
-gui.add(uniforms.uWarpStrength, 'value').name('Warp Strength').min(0.0).max(1.0).step(0.01);
+gui.add(uniforms.uPositionFrequency, 'value').name('Position Frequency').min(0.0).max(1.0).step(0.001);
+gui.add(uniforms.uStrength, 'value').name('Strength').min(0.0).max(5.0).step(0.001);
+gui.add(uniforms.uWarpFrequency, 'value').name('Warp Frequency').min(0.0).max(10.0).step(0.001);
+gui.add(uniforms.uWarpStrength, 'value').name('Warp Strength').min(0.0).max(1.0).step(0.001);
 
 gui.addColor(debugObject, 'colorWaterDeep').onChange(() =>
 	uniforms.uColorWaterDeep.value.set(debugObject.colorWaterDeep)
@@ -195,7 +195,7 @@ scene.add(plane);
 const fontLoader = new FontLoader();
 fontLoader.load('/fonts/spacex.json', (font) => {
 	// First line of text
-	const textGeometry = new TextGeometry('Space X', {
+	const textGeometry = new TextGeometry('sPaCE X', {
 		font: font,
 		size: 0.5,
 		height: 0.2,
@@ -215,9 +215,9 @@ fontLoader.load('/fonts/spacex.json', (font) => {
 	scene.add(textMesh1);
 
 	// Second line of text
-	const textGeometry2 = new TextGeometry('Bye, Earth', {
+	const textGeometry2 = new TextGeometry('Bye, EaRth', {
 		font: font,
-		size: 0.5,
+		size: 0.49,
 		height: 0.2,
 		curveSegments: 12,
 		bevelEnabled: true,
@@ -225,12 +225,13 @@ fontLoader.load('/fonts/spacex.json', (font) => {
 		bevelSize: 0.02,
 		bevelOffset: 0,
 		bevelSegments: 5,
-	});
+	});	
 	textGeometry2.center();
+	
 
 	const textMaterial2 = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
 	const textMesh2 = new THREE.Mesh(textGeometry2, textMaterial2);
-	textMesh2.position.set(0, 1.0, 1.0);
+	textMesh2.position.set(0.0, 1.0, 1.0);
 	textMesh2.rotation.x = -Math.PI * 0.5;
 	scene.add(textMesh2);
 
