@@ -195,7 +195,7 @@ scene.add(plane);
 const fontLoader = new FontLoader();
 fontLoader.load('/fonts/spacex.json', (font) => {
 	// First line of text
-	const textGeometry = new TextGeometry('sPaCE X', {
+	const textGeometry = new TextGeometry('Space X', {
 		font: font,
 		size: 0.5,
 		height: 0.2,
@@ -215,7 +215,7 @@ fontLoader.load('/fonts/spacex.json', (font) => {
 	scene.add(textMesh1);
 
 	// Second line of text
-	const textGeometry2 = new TextGeometry('Bye, EaRth', {
+	const textGeometry2 = new TextGeometry('Bye, EaRtH', {
 		font: font,
 		size: 0.49,
 		height: 0.2,
